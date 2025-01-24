@@ -1,0 +1,21 @@
+# Ignore Unity-generated files
+*.csproj
+*.sln
+*.log
+
+# Ignore other unnecessary files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+UserSettings/
+
+# Ignore IDE files
+.vs/
+.idea/
+.vscode/
+
+# Logs
+*.log
+Logs/
