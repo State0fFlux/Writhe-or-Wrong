@@ -15,7 +15,7 @@
 ## Technology Stack
 - **Engine**: Unity 6
 - **Programming**: C# for game logic and mechanics.
-- **Art & Design**: Boxy SVG for assets.
+- **Art & Design**: Boxy SVG for assets, Garageband for digital tracks
 
 ## Repository Structure
 - `/Assets`: Unity project files, including scripts, prefabs, and scenes.
