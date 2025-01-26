@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MazeMaster : MonoBehaviour
 {
@@ -9,12 +10,44 @@ public class MazeMaster : MonoBehaviour
     public Stamps[] items; // Array of 4 distinct items (GameObjects)
     private List<int> availableRooms;  // Track rooms that can spawn items
     private List<Stamps> spawnedItems = new List<Stamps>();  // List of spawned items
-    public int playerScore = 0;
+    public int performance = 50; // worm's performance
+    public int sanity = 100; // host's sanity
+    private const float respawnInterval = 45f; // Time interval for respawn
+    private const int sanityPenalty = 25; // determines the amount of sanity taken off per miss
+    private float timer = 0f;
+
+    public TextMeshProUGUI timerText;
+    public Slider sanityMeter;
+    public Slider performanceMeter;
     
     
     void Start()
     {
         SpawnItems();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (sanity <= 0) {
+            SceneManager.LoadScene("InsaneEndScene");
+        } else if (performance >= 100) {
+            SceneManager.LoadScene("VictoryEndScene");
+        } else if (performance <= 0) {
+            SceneManager.LoadScene("DefeatEndScene");
+        }
+
+        timer += Time.deltaTime; // Increment timer
+
+
+        // Check if the timer exceeds the respawn interval
+        if (timer >= respawnInterval) {
+            sanity -= 25; // Reduce sanity
+            Debug.Log("Sanity: " + sanity);
+            RespawnItems();
+            timer = 0f; // reset timer
+        }
+        UpdateUI();
     }
 
     void SpawnItems()
@@ -76,13 +109,21 @@ public class MazeMaster : MonoBehaviour
 
     public void AddScore(int multiplier)
     {
-        playerScore += multiplier;
-        Debug.Log("Score: " + playerScore);  // Output the current score for testing
+        performance += 10 * multiplier;
+        Debug.Log("Score: " + performance);  // Output the current score for testing
+        timer = 0f;
     }
 
-    // Update is called once per frame
-    void Update()
+        void UpdateUI()
     {
-        
+        // Update sanity and performance meters
+        sanityMeter.value = sanity;
+        performanceMeter.value = performance;
+        float timeLeft = respawnInterval - timer;
+        if (timeLeft < 10) { // single digits
+            timerText.text = "00:0" + Mathf.Ceil(respawnInterval - timer).ToString();
+        } else {
+            timerText.text = "00:" + Mathf.Ceil(respawnInterval - timer).ToString();
+        }
     }
 }
