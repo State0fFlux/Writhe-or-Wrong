@@ -18,6 +18,7 @@ public class Stamps : MonoBehaviour
         {
             CollectItem();  // Call the collect item function
         }
+        LawScroller.lawStamped = true;
     }
 
     // Handle item collection

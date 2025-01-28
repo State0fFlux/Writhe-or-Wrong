@@ -44,6 +44,7 @@ public class MazeMaster : MonoBehaviour
         if (timer >= respawnInterval) {
             sanity -= 25; // Reduce sanity
             Debug.Log("Sanity: " + sanity);
+            LawScroller.lawStamped = true;
             RespawnItems();
             timer = 0f; // reset timer
         }
