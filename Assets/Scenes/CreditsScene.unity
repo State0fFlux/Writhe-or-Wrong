@@ -705,9 +705,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Physics Modeling & Art: Brady
+  m_text: 'Physics Modeling, UI, & Art: Brady
 
-    Gameplay Programming: Gary
+    Gameplay Logic & Scripting: Gary
 
     Narrative
     Writing: Riley

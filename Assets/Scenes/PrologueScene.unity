@@ -815,7 +815,7 @@ GameObject:
   - component: {fileID: 1577346533}
   - component: {fileID: 1577346532}
   m_Layer: 5
-  m_Name: BackToLobbyButton
+  m_Name: StartGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
