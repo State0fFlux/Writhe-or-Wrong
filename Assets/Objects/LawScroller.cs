@@ -31,9 +31,15 @@ public class LawScroller : MonoBehaviour
             float scrollSpeed = (screenHeight + imageHeight) / timePerImage * 1.25f; // had to manually adjust, there's gotta be a better mathematical approach to this
 
             // Start scrolling this image
+<<<<<<< Updated upstream
             Laws scroller = currentLaw.GetComponent<Laws>();
             scroller.direction = Vector3.up;
             scroller.scrollSpeed = this.scrollSpeed;  // Set scrolling speed as desired
+=======
+            Law scroller = currentLaw.GetComponent<Law>();
+            scroller.direction = Vector3.up;
+            scroller.scrollSpeed = scrollSpeed;  // Set scrolling speed as desired
+>>>>>>> Stashed changes
             
             //Debug.Log(currentIndex);
             while (scroller != null)

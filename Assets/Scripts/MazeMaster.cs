@@ -60,11 +60,19 @@ public class MazeMaster : MonoBehaviour
     }
 
     public static void timerRunsOut(){
+<<<<<<< Updated upstream
         sanity -= 25; // Reduce sanity
         Debug.Log("Sanity: " + sanity);
         LawScroller.lawStamped = true;
         RespawnItems();
         timer = 0f; // reset timer
+=======
+        timer = 0f; // reset timer
+        sanity -= sanityPenalty; // Reduce sanity
+        Debug.Log("Sanity: " + sanity);
+        LawScroller.lawStamped = true;
+        RespawnItems();
+>>>>>>> Stashed changes
     }
 
     public static void SpawnItems()
@@ -131,7 +139,7 @@ public class MazeMaster : MonoBehaviour
 
     public static void AddScore(int multiplier)
     {
-        performance += 10 * multiplier;
+        performance += 10 * multiplier; // update the 10 so that it accesses the worth of the law that was stamped idrk how
         Debug.Log("Score: " + performance);  // Output the current score for testing
         timer = 0f;
     }
@@ -142,7 +150,7 @@ public class MazeMaster : MonoBehaviour
         sanityMeter.value = sanity;
         performanceMeter.value = performance;
         float timeLeft = respawnInterval - timer;
-        if (timeLeft <= 10f - 1) { // single digits
+        if (timeLeft <= 9f) { // single digits
             timerText.text = "00:0" + Mathf.Ceil(respawnInterval - timer).ToString();
         } else {
             timerText.text = "00:" + Mathf.Ceil(respawnInterval - timer).ToString();
