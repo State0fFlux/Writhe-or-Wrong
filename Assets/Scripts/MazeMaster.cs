@@ -121,7 +121,7 @@ public class MazeMaster : MonoBehaviour
         sanityMeter.value = sanity;
         performanceMeter.value = performance;
         float timeLeft = respawnInterval - timer;
-        if (timeLeft < 10) { // single digits
+        if (timeLeft <= 10f - 1) { // single digits
             timerText.text = "00:0" + Mathf.Ceil(respawnInterval - timer).ToString();
         } else {
             timerText.text = "00:" + Mathf.Ceil(respawnInterval - timer).ToString();
