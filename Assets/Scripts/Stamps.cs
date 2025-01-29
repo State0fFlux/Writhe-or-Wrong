@@ -29,7 +29,7 @@ public class Stamps : MonoBehaviour
         MazeMaster.AddScore(multiplier);
 
         // Notify the MazeManager to respawn the items
-        MazeMaster.RespawnItems();
+        //MazeMaster.RespawnItems();
     }
 
 }

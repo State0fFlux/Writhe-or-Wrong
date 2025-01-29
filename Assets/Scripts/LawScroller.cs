@@ -7,6 +7,7 @@ public class LawScroller : MonoBehaviour
     private int currentIndex = 0;
     public static bool lawStamped = false;
     public float timePerImage = 45f;
+    public MazeMaster game;
 
     private void Start()
     {
@@ -28,7 +29,7 @@ public class LawScroller : MonoBehaviour
             float imageHeight = spriteRenderer.bounds.size.y;  // Consider scale
 
             // Dynamically calculate scroll speed
-            float scrollSpeed = (screenHeight + imageHeight) / timePerImage * 1.25f; // had to manually adjust, there's gotta be a better mathematical approach to this
+            float scrollSpeed = (screenHeight - 30 + imageHeight) / timePerImage; // had to manually adjust, there's gotta be a better mathematical approach to this
 
             // Start scrolling this image
             Law scroller = currentLaw.GetComponent<Law>();
@@ -43,6 +44,7 @@ public class LawScroller : MonoBehaviour
                 {
                     scroller.direction = Vector3.right;
                     scroller.scrollSpeed = 333;
+                    game.AskToWait();
                     yield return new WaitForSeconds(2);
                     Destroy(scroller);
                     lawStamped = false;
@@ -50,7 +52,7 @@ public class LawScroller : MonoBehaviour
                 if (scroller.transform.position.y > 200) 
                 {
                     Destroy(scroller);  // Remove it from the scene
-                    MazeMaster.timerRunsOut();
+                    //MazeMaster.timerRunsOut();
                 }
                 
                 yield return null;
