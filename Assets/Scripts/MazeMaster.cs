@@ -60,19 +60,11 @@ public class MazeMaster : MonoBehaviour
     }
 
     public static void timerRunsOut(){
-<<<<<<< Updated upstream
-        sanity -= 25; // Reduce sanity
-        Debug.Log("Sanity: " + sanity);
-        LawScroller.lawStamped = true;
-        RespawnItems();
-        timer = 0f; // reset timer
-=======
         timer = 0f; // reset timer
         sanity -= sanityPenalty; // Reduce sanity
         Debug.Log("Sanity: " + sanity);
         LawScroller.lawStamped = true;
         RespawnItems();
->>>>>>> Stashed changes
     }
 
     public static void SpawnItems()
