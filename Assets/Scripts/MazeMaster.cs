@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class MazeMaster : MonoBehaviour
 {
-    public List<Room> rooms;  // List of all Room references
-    public Stamps[] items; // Array of 4 distinct items (GameObjects)
-    private List<int> availableRooms;  // Track rooms that can spawn items
-    private List<Stamps> spawnedItems = new List<Stamps>();  // List of spawned items
-    public int performance = 50; // worm's performance
-    public int sanity = 100; // host's sanity
+    public static List<Room> rooms;  // List of all Room references
+    public static Stamps[] items; // Array of 4 distinct items (GameObjects)
+    public static List<int> availableRooms;  // Track rooms that can spawn items
+    public static List<Stamps> spawnedItems = new List<Stamps>();  // List of spawned items
+    public static int performance = 50; // worm's performance
+    public static int sanity = 100; // host's sanity
     private const float respawnInterval = 45f; // Time interval for respawn
     private const int sanityPenalty = 25; // determines the amount of sanity taken off per miss
-    private float timer = 0f;
+    public static float timer = 0f;
 
     public TextMeshProUGUI timerText;
     public Slider sanityMeter;
@@ -23,6 +23,19 @@ public class MazeMaster : MonoBehaviour
     
     void Start()
     {
+        rooms = new List<Room>();
+        for (int i=1; i<=17; i++){
+            string s = "Spawn Room ("+i+")";
+            Room room = GameObject.Find(s).GetComponent<Room>();
+            rooms.Add(room);
+        }
+
+        items = new Stamps[4];
+        items[0] = GameObject.Find("Super Yes").GetComponent<Stamps>();
+        items[1] = GameObject.Find("Yes").GetComponent<Stamps>();
+        items[2] = GameObject.Find("No").GetComponent<Stamps>();
+        items[3] = GameObject.Find("Super No").GetComponent<Stamps>();
+
         SpawnItems();
     }
 
@@ -39,24 +52,33 @@ public class MazeMaster : MonoBehaviour
 
         timer += Time.deltaTime; // Increment timer
 
-
         // Check if the timer exceeds the respawn interval
         if (timer >= respawnInterval) {
-            sanity -= 25; // Reduce sanity
-            Debug.Log("Sanity: " + sanity);
-            LawScroller.lawStamped = true;
-            RespawnItems();
-            timer = 0f; // reset timer
+            timerRunsOut();
         }
         UpdateUI();
     }
 
-    void SpawnItems()
+    public static void timerRunsOut(){
+        sanity -= 25; // Reduce sanity
+        Debug.Log("Sanity: " + sanity);
+        LawScroller.lawStamped = true;
+        RespawnItems();
+        timer = 0f; // reset timer
+    }
+
+    public static void SpawnItems()
     {
+        //Debug.Log("I've been called upon!");
         List<int> itemIndices = new List<int>{0, 1, 2, 3};
         availableRooms=new List<int>();
         for (int i=0;i<=16;i++){
-            availableRooms.Add(i);
+            if (!rooms[i].GetComponent<BoxCollider2D>().bounds.Contains(GameObject.FindWithTag("Player").transform.position)){
+                availableRooms.Add(i);
+            }
+            if (rooms[i].GetComponent<BoxCollider2D>().bounds.Contains(GameObject.FindWithTag("Player").transform.position)){
+                Debug.Log("Disaster Prevented!");
+            }
         }
         // Randomize the order of rooms
         ShuffleList(availableRooms);
@@ -78,7 +100,7 @@ public class MazeMaster : MonoBehaviour
     }
 
     // Helper function to shuffle lists randomly
-    void ShuffleList<T>(List<T> list)
+    public static void ShuffleList<T>(List<T> list)
     {
         System.Random rng = new System.Random();
         int n = list.Count;
@@ -93,12 +115,11 @@ public class MazeMaster : MonoBehaviour
     }
 
     // Respawn items in new random rooms
-    public void RespawnItems()
+    public static void RespawnItems()
     {
         // Destroy all currently spawned items
         foreach (Stamps item in spawnedItems)
         {
-            Debug.Log("Destroyed "+item.index);
             Destroy(item.gameObject);  // Destroy the collected item
         }
         
@@ -108,14 +129,14 @@ public class MazeMaster : MonoBehaviour
         SpawnItems();
     }
 
-    public void AddScore(int multiplier)
+    public static void AddScore(int multiplier)
     {
         performance += 10 * multiplier;
         Debug.Log("Score: " + performance);  // Output the current score for testing
         timer = 0f;
     }
 
-        void UpdateUI()
+    void UpdateUI()
     {
         // Update sanity and performance meters
         sanityMeter.value = sanity;

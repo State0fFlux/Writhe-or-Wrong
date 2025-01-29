@@ -7,7 +7,7 @@ public class LawScroller : MonoBehaviour
     public float scrollSpeed = 30f;
     private int currentIndex = 0;
     public static bool lawStamped = false;
-    public float timePerImage = 20f;
+    //public float timePerImage = 20f;
 
     private void Start()
     {
@@ -24,6 +24,7 @@ public class LawScroller : MonoBehaviour
 
             // Start scrolling this image
             Laws scroller = currentLaw.GetComponent<Laws>();
+            scroller.direction = Vector3.up;
             scroller.scrollSpeed = this.scrollSpeed;  // Set scrolling speed as desired
             
             //Debug.Log(currentIndex);
@@ -32,17 +33,16 @@ public class LawScroller : MonoBehaviour
                 // Yielding null makes it wait until the next frame, effectively checking each frame if the object is destroyed
                 if (lawStamped)
                 {
-                    // Move the image quickly to the right when the flag is triggered
-                    for (float i = 1.0f; i <= 10.0f; i += 0.1f) 
-                    {
-                        scroller.transform.position += Vector3.right * Time.deltaTime;  // Adjust speed to your liking
-                    }
+                    scroller.direction = Vector3.right;
+                    scroller.scrollSpeed = 333;
+                    yield return new WaitForSeconds(2);
                     Destroy(scroller);
                     lawStamped = false;
                 }
                 if (scroller.transform.position.y > 200) 
                 {
                     Destroy(scroller);  // Remove it from the scene
+                    MazeMaster.timerRunsOut();
                 }
                 
                 yield return null;

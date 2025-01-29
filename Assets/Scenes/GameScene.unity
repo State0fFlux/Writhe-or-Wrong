@@ -2410,31 +2410,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03d75244e86d044f59e12fa453e0c540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rooms:
-  - {fileID: 1778071145}
-  - {fileID: 459784608}
-  - {fileID: 358343500}
-  - {fileID: 1667086288}
-  - {fileID: 33452577}
-  - {fileID: 560331503}
-  - {fileID: 1727135833}
-  - {fileID: 1961022572}
-  - {fileID: 591425403}
-  - {fileID: 1927722692}
-  - {fileID: 981795051}
-  - {fileID: 1969508899}
-  - {fileID: 1571915993}
-  - {fileID: 675021555}
-  - {fileID: 960414232}
-  - {fileID: 2056936702}
-  - {fileID: 1732400968}
-  items:
-  - {fileID: 1267797713}
-  - {fileID: 399590034}
-  - {fileID: 241756816}
-  - {fileID: 1510467723}
-  performance: 50
-  sanity: 100
   timerText: {fileID: 1924653401}
   sanityMeter: {fileID: 1751403822}
   performanceMeter: {fileID: 1281295080}
@@ -7286,7 +7261,6 @@ MonoBehaviour:
   - {fileID: 149476328}
   - {fileID: 598998218}
   scrollSpeed: 10
-  timePerImage: 60
 --- !u!4 &1714921432
 Transform:
   m_ObjectHideFlags: 0
@@ -7554,8 +7528,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &1732400970
-CapsuleCollider2D:
+--- !u!61 &1732400970
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -7588,9 +7562,18 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.00000047683716, y: 0}
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
-  m_Direction: 0
+  m_EdgeRadius: 0
 --- !u!1 &1751403820
 GameObject:
   m_ObjectHideFlags: 0
@@ -8929,6 +8912,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worm
       objectReference: {fileID: 0}
+    - target: {fileID: 1213270158173337729, guid: 8074b725b9f424d0480874d8dc476d6c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2640250181883252383, guid: 8074b725b9f424d0480874d8dc476d6c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.4
@@ -8990,9 +8977,9 @@ SceneRoots:
   - {fileID: 855993118}
   - {fileID: 775419029}
   - {fileID: 130775784}
-  - {fileID: 38009278}
   - {fileID: 199783791}
   - {fileID: 1086273028}
   - {fileID: 1760998525}
   - {fileID: 1972703033}
+  - {fileID: 38009278}
   - {fileID: 1714921432}

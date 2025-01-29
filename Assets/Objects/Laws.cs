@@ -4,6 +4,7 @@ public class Laws : MonoBehaviour
 {
     public float scrollSpeed;  // Control the speed of scrolling
     public int value;
+    public Vector3 direction;
 
     void Start()
     {
@@ -12,7 +13,7 @@ public class Laws : MonoBehaviour
 
     void Update()
     { 
-        transform.position += Vector3.up * scrollSpeed * Time.deltaTime;
+        transform.position += direction * scrollSpeed * Time.deltaTime;
 
         // Check if the image has fully scrolled out of the screen
         if (transform.position.y > Screen.height) 
