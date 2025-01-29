@@ -3,7 +3,7 @@ using UnityEngine;
 public class Stamps : MonoBehaviour
 {
     public int multiplier; // The multiplier associated with the stamp type (negative for veto, positive for expedite)
-    public int index; //0=super yes, 1=yes, 2=no, 3=super no.
+    public int index; //0=yes, 1=no, 2=super yes, 3=super no.
     //private MazeMaster mazeMaster;
 
     void Start()
@@ -24,7 +24,10 @@ public class Stamps : MonoBehaviour
     // Handle item collection
     void CollectItem()
     {
-        Destroy(this.gameObject);
+        // making it invisible (will be destroyed by MazeMaster in like 2 seconds)
+        this.gameObject.SetActive(false);
+        //this.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+        //this.gameObject.GetComponent<Renderer>().enabled = false;
         // Add to player's score (using a method in the MazeManager or PlayerManager)
         MazeMaster.AddScore(multiplier);
 

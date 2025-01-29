@@ -44,7 +44,7 @@ public class LawScroller : MonoBehaviour
                 {
                     scroller.direction = Vector3.right;
                     scroller.scrollSpeed = 333;
-                    game.AskToWait();
+                    game.AskToReset();
                     yield return new WaitForSeconds(2);
                     Destroy(scroller);
                     lawStamped = false;

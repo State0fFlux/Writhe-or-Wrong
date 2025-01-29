@@ -17,7 +17,7 @@ public class MazeMaster : MonoBehaviour
     private const float respawnInterval = 45f; // Time interval for respawn
     private const int sanityPenalty = 25; // determines the amount of sanity taken off per miss
     public static float timer = 0f;
-    private bool isPaused = false;
+    private bool shouldReset = false;
 
     public TextMeshProUGUI timerText;
     public Slider sanityMeter;
@@ -32,12 +32,6 @@ public class MazeMaster : MonoBehaviour
             Room room = GameObject.Find(s).GetComponent<Room>();
             rooms.Add(room);
         }
-
-        items = new Stamps[4];
-        items[0] = GameObject.Find("Super Yes").GetComponent<Stamps>();
-        items[1] = GameObject.Find("Yes").GetComponent<Stamps>();
-        items[2] = GameObject.Find("No").GetComponent<Stamps>();
-        items[3] = GameObject.Find("Super No").GetComponent<Stamps>();
 
         SpawnItems();
 
@@ -60,15 +54,14 @@ public class MazeMaster : MonoBehaviour
                     sanity -= sanityPenalty; // Reduce sanity
                     Debug.Log("Sanity: " + sanity);
                     LawScroller.lawStamped = true;
-                    // Wait for 2 seconds before respawning items
-                    //isPaused = true;
-                    yield return new WaitForSeconds(2f);
-                    RespawnItems(); // Respawn the items
+                    shouldReset = true;
                 }
-            else if (isPaused)
+            if (shouldReset)
             {
+                Debug.Log("I should prob reset!");
                 yield return new WaitForSeconds(2f);
-                isPaused = false;
+                RespawnItems();
+                shouldReset = false;
             } else {
                 timer += 1f;
                 yield return new WaitForSeconds(1f); // Wait for 1 second before updating the timer
@@ -80,7 +73,14 @@ public class MazeMaster : MonoBehaviour
 
     public static void SpawnItems()
     {
-        //Debug.Log("I've been called upon!");
+        Debug.Log("I've been called upon!");
+
+        items = new Stamps[4];
+        items[0] = GameObject.Find("Super Yes").GetComponent<Stamps>();
+        items[1] = GameObject.Find("Yes").GetComponent<Stamps>();
+        items[2] = GameObject.Find("No").GetComponent<Stamps>();
+        items[3] = GameObject.Find("Super No").GetComponent<Stamps>();
+
         List<int> itemIndices = new List<int>{ 0, 1, 2, 3 };
         availableRooms = new List<int>();
         for (int i = 0; i <= 16; i++)
@@ -134,6 +134,7 @@ public class MazeMaster : MonoBehaviour
         // Destroy all currently spawned items
         foreach (Stamps item in spawnedItems)
         {
+            Debug.Log(item + ": " + item.gameObject);
             Destroy(item.gameObject);  // Destroy the collected item
         }
 
@@ -171,8 +172,8 @@ public class MazeMaster : MonoBehaviour
         }
     }
 
-    public void AskToWait() {
-        isPaused = true;
+    public void AskToReset() {
+        shouldReset = true;
     }
 
 }
