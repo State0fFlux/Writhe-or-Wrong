@@ -30,7 +30,7 @@ public class MazeMaster : MonoBehaviour
     void Update()
     {
         if (sanity <= 0) {
-            SceneManager.LoadScene("InsaneEndScene");
+            SceneManager.LoadScene("InsanityEndScene");
         } else if (performance >= 100) {
             SceneManager.LoadScene("VictoryEndScene");
         } else if (performance <= 0) {

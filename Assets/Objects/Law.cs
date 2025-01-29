@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Laws : MonoBehaviour
+public class Law : MonoBehaviour
 {
     public float scrollSpeed;  // Control the speed of scrolling
     public int value;

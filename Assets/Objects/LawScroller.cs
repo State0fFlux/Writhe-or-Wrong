@@ -4,7 +4,6 @@ using System.Collections;
 public class LawScroller : MonoBehaviour
 {
     public GameObject[] laws;  // Array of PNG GameObjects (Sprites)
-    public float scrollSpeed = 30f;
     private int currentIndex = 0;
     public static bool lawStamped = false;
     public float timePerImage = 20f;
@@ -22,9 +21,16 @@ public class LawScroller : MonoBehaviour
             currentLaw.transform.localScale = new Vector3(7, 7, 0);
             currentLaw.transform.SetParent(transform); // Ensure the image is a child of the manager
 
+            // Calculate screen and image dimensions
+            float screenHeight = Camera.main.orthographicSize * 2; // Full screen height in world units
+            float imageHeight = currentLaw.GetComponent<SpriteRenderer>().bounds.size.y;
+
+            // Dynamically calculate scroll speed
+            float scrollSpeed = (screenHeight + imageHeight) / timePerImage;
+
             // Start scrolling this image
-            Laws scroller = currentLaw.GetComponent<Laws>();
-            scroller.scrollSpeed = this.scrollSpeed;  // Set scrolling speed as desired
+            Law scroller = currentLaw.GetComponent<Law>();
+            scroller.scrollSpeed = scrollSpeed;  // Set scrolling speed as desired
             
             //Debug.Log(currentIndex);
             while (scroller != null)
@@ -48,7 +54,7 @@ public class LawScroller : MonoBehaviour
                 yield return null;
             }
 
-            Destroy(currentLaw.gameObject);  // Remove current image from the screen
+            Destroy(currentLaw);  // Remove current image from the screen
             currentIndex++;  // Move to the next image
         }
     }

@@ -4,9 +4,16 @@ using UnityEngine.SceneManagement; // Needed for scene management
 public class MenuController : MonoBehaviour
 {
     // This method will be called when the "Start Game" button is clicked
+    public void Prologue()
+    {
+        // Load the "Prologue" scene
+        SceneManager.LoadScene("PrologueScene");
+    }
+
+    // This method will be called when the "Continue" button is clicked
     public void StartGame()
     {
-        // Load the "Game" scene
+        // Load the "Prologue" scene
         SceneManager.LoadScene("GameScene");
     }
 

@@ -6,8 +6,29 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/LobbyScene.unity
+    guid: 23762d74bc715434b80123c9c4e8d1ac
+  - enabled: 1
+    path: Assets/Scenes/ControlsScene.unity
+    guid: f4d6c8346dc384316ae578497505b600
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: 9a60903ca3a7e405683b5fa8edd44ae5
+  - enabled: 1
+    path: Assets/Scenes/PrologueScene.unity
+    guid: 2fa1e25f8b0ba43f8bc27cd4f5016ef6
+  - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/VictoryEndScene.unity
+    guid: 7d00efa46b96844409fcdb6a6c1a7a58
+  - enabled: 1
+    path: Assets/Scenes/DefeatEndScene.unity
+    guid: fe4df2ea4ca594aafb4144bf6c5dde54
+  - enabled: 1
+    path: Assets/Scenes/InsanityEndScene.unity
+    guid: 76b7d925dd16e41a5aa03796d72ee61c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
