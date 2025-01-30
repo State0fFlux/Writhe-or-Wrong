@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 3907445593654841218}
   m_Layer: 3
   m_Name: Worm body 1 (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 2640250181883252383}
   m_Layer: 0
   m_Name: Worm
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 5815363924630098275}
   m_Layer: 3
   m_Name: Worm body 1 (12)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -690,7 +690,7 @@ GameObject:
   - component: {fileID: 5577767049227347342}
   m_Layer: 3
   m_Name: Worm body 1 (6)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -914,7 +914,7 @@ GameObject:
   - component: {fileID: 3064585253005197655}
   m_Layer: 3
   m_Name: Worm body 1 (3)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1399,7 +1399,7 @@ GameObject:
   - component: {fileID: 3967603352908531904}
   m_Layer: 3
   m_Name: Worm body 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1623,7 +1623,7 @@ GameObject:
   - component: {fileID: 5712778195650579654}
   m_Layer: 3
   m_Name: Worm body 1 (11)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1847,7 +1847,7 @@ GameObject:
   - component: {fileID: 8220015041091888032}
   m_Layer: 3
   m_Name: Worm body 1 (9)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2071,7 +2071,7 @@ GameObject:
   - component: {fileID: 8248738686933695601}
   m_Layer: 3
   m_Name: Worm body 1 (10)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2295,7 +2295,7 @@ GameObject:
   - component: {fileID: 7813624337267124291}
   m_Layer: 3
   m_Name: Worm body 1 (8)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2519,7 +2519,7 @@ GameObject:
   - component: {fileID: 8582412250008414387}
   m_Layer: 3
   m_Name: Worm body 1 (2)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2917,7 +2917,7 @@ GameObject:
   - component: {fileID: 5387127658911762794}
   m_Layer: 3
   m_Name: Worm body 1 (7)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3138,10 +3138,10 @@ GameObject:
   - component: {fileID: 365140540541735030}
   - component: {fileID: 517377997825687103}
   - component: {fileID: 4154510378329931126}
-  - component: {fileID: 8575798963136717084}
+  - component: {fileID: 4584722772845599051}
   m_Layer: 6
   m_Name: Worm head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3448,7 +3448,7 @@ GameObject:
   - component: {fileID: 6922116135596169162}
   m_Layer: 3
   m_Name: Worm body 1 (5)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3672,7 +3672,7 @@ GameObject:
   - component: {fileID: 5028769188376442672}
   m_Layer: 3
   m_Name: Worm body 1 (4)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3933,6 +3933,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worm body 1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 506584722291011008, guid: 8c6ca8dfaa4aa4347b8196aba4e64bb2, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1835123106399885684, guid: 8c6ca8dfaa4aa4347b8196aba4e64bb2, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: 0.0000011682512
@@ -4054,6 +4058,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worm body 1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8738456655343458631, guid: bd5495a2f5bbb4615a449ae512468f38, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4086,6 +4094,10 @@ PrefabInstance:
     - target: {fileID: 4422739324670861082, guid: a2e64d75a6f854006ba0bfdaa1806d87, type: 3}
       propertyPath: m_Name
       value: Worm body 1 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422739324670861082, guid: a2e64d75a6f854006ba0bfdaa1806d87, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4771826897403304553, guid: a2e64d75a6f854006ba0bfdaa1806d87, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4204,6 +4216,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worm body 1 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 3336496325522112972, guid: bfaf0ddd509eb4313b5cf73f3f69387b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3452022815520855044, guid: bfaf0ddd509eb4313b5cf73f3f69387b, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: 0.000001102686
@@ -4248,6 +4264,10 @@ PrefabInstance:
     - target: {fileID: 1988527748484558610, guid: e1b177520398b4892b3453cada740bc4, type: 3}
       propertyPath: m_Name
       value: Worm body 1 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988527748484558610, guid: e1b177520398b4892b3453cada740bc4, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2559742306194817536, guid: e1b177520398b4892b3453cada740bc4, type: 3}
       propertyPath: m_Mass
@@ -4434,6 +4454,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worm head
       objectReference: {fileID: 0}
+    - target: {fileID: 8386967505715682694, guid: b721eee0289d24b909988c774119e36f, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 9221919210491729280, guid: b721eee0289d24b909988c774119e36f, type: 3}
       propertyPath: m_SortingOrder
       value: 114
@@ -4445,9 +4469,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8386967505715682694, guid: b721eee0289d24b909988c774119e36f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8575798963136717084}
+      addedObject: {fileID: 4584722772845599051}
   m_SourcePrefab: {fileID: 100100000, guid: b721eee0289d24b909988c774119e36f, type: 3}
---- !u!58 &8575798963136717084
+--- !u!58 &4584722772845599051
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4481,7 +4505,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0000019073486, y: 0}
   m_Radius: 0.5000001
 --- !u!1001 &3301761922404005168
 PrefabInstance:
@@ -4510,6 +4534,10 @@ PrefabInstance:
     - target: {fileID: 3997407964507427067, guid: 06e09e1c0bbe1440ba02a5f8775bb294, type: 3}
       propertyPath: m_Name
       value: Worm body 1 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3997407964507427067, guid: 06e09e1c0bbe1440ba02a5f8775bb294, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8613517178980173246, guid: 06e09e1c0bbe1440ba02a5f8775bb294, type: 3}
       propertyPath: m_Color.b
@@ -4656,6 +4684,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worm body 1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7988608917708738199, guid: a68cd7a919d4d4623938d6baa11ad8f6, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4676,6 +4708,10 @@ PrefabInstance:
     - target: {fileID: 1235385388729974002, guid: 69caa091ea81b4d5b9f77cc666972be8, type: 3}
       propertyPath: m_Name
       value: Worm body 1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235385388729974002, guid: 69caa091ea81b4d5b9f77cc666972be8, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1801765988719287204, guid: 69caa091ea81b4d5b9f77cc666972be8, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -4826,6 +4862,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worm body 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6264896049810716853, guid: 9cfd66c6d423b4721a7cc79c0d5daf9d, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4911,6 +4951,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worm body 1 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7118498559354479817, guid: 162108cc7f8de4535952ead5dca7c78a, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7875710443559547875, guid: 162108cc7f8de4535952ead5dca7c78a, type: 3}
       propertyPath: m_Mass
       value: 0.1
@@ -4988,6 +5032,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worm body 1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4617140826326118851, guid: de4f16c41f09f4c54b126f8053996a0f, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4656989884915709599, guid: de4f16c41f09f4c54b126f8053996a0f, type: 3}
       propertyPath: m_Mass
       value: 0.1
@@ -5052,6 +5100,10 @@ PrefabInstance:
     - target: {fileID: 7564476903884539937, guid: 13f8af6acedc048e29f22ed1f6dcad90, type: 3}
       propertyPath: m_Name
       value: Worm body 1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564476903884539937, guid: 13f8af6acedc048e29f22ed1f6dcad90, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8749819124936405854, guid: 13f8af6acedc048e29f22ed1f6dcad90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5181,6 +5233,10 @@ PrefabInstance:
     - target: {fileID: 8196534594380042348, guid: 4d06683d34ba643b1ad9ef82899c17a9, type: 3}
       propertyPath: m_Name
       value: Worm body 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196534594380042348, guid: 4d06683d34ba643b1ad9ef82899c17a9, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

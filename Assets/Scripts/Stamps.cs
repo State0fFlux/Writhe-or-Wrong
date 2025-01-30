@@ -14,6 +14,7 @@ public class Stamps : MonoBehaviour
     // Trigger when the player collides with the item
     void OnTriggerEnter2D(Collider2D other)
     {
+        print("You've entered my personal bubble!");
         if (other.CompareTag("Player"))
         {
             CollectItem();  // Call the collect item function
