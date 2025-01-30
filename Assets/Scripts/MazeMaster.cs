@@ -18,6 +18,7 @@ public class MazeMaster : MonoBehaviour
     private const int sanityPenalty = 25; // determines the amount of sanity taken off per miss
     public static float timer = 0f;
     private bool shouldReset = false;
+    public static int lawValue = 10;
 
     public TextMeshProUGUI timerText;
     public Slider sanityMeter;
@@ -146,7 +147,7 @@ public class MazeMaster : MonoBehaviour
 
     public static void AddScore(int multiplier)
     {
-        performance += 10 * multiplier; // update the 10 so that it accesses the worth of the law that was stamped idrk how
+        performance += lawValue * multiplier; // update the 10 so that it accesses the worth of the law that was stamped idrk how
         Debug.Log("Score: " + performance);  // Output the current score for testing
         timer = 0f;
     }

@@ -35,7 +35,8 @@ public class LawScroller : MonoBehaviour
             Law scroller = currentLaw.GetComponent<Law>();
             scroller.direction = Vector3.up;
             scroller.scrollSpeed = scrollSpeed;  // Set scrolling speed as desired
-            scroller.whoosh = 0;
+            scroller.whoosh = 1;
+            MazeMaster.lawValue = scroller.value;
             
             //Debug.Log(currentIndex);
             while (scroller != null)
@@ -44,8 +45,8 @@ public class LawScroller : MonoBehaviour
                 if (lawStamped)
                 {
                     scroller.direction = Vector3.right;
-                    scroller.scrollSpeed = 0;
-                    scroller.whoosh = 2;
+                    scroller.scrollSpeed = 2;
+                    scroller.whoosh = 1.1f;
                     game.AskToReset();
                     yield return new WaitForSeconds(2);
                     Destroy(scroller);

@@ -15,7 +15,7 @@ public class Law : MonoBehaviour
     void Update()
     { 
         transform.position += direction * scrollSpeed * Time.deltaTime;
-        scrollSpeed += whoosh;
+        scrollSpeed *= whoosh;
 
         // Check if the image has fully scrolled out of the screen
         if (transform.position.y > Screen.height) 
