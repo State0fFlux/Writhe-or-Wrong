@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5cd7c3e17d361458ca7f2484b42af0c7
+guid: c2aacdb0665474272b1f401789d5e2df
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9126835487799610955
-    second: Untitled8_0
+      213: -778957837942873589
+    second: worm bills alpha-1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled8_0
+      name: worm bills alpha-1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 1700
+        height: 2200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b4e89b5258809ae70800000000000000
-      internalID: 9126835487799610955
+      spriteID: b02a86639f59035f0800000000000000
+      internalID: -778957837942873589
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Untitled8_0: 9126835487799610955
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

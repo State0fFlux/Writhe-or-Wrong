@@ -35,6 +35,7 @@ public class LawScroller : MonoBehaviour
             Law scroller = currentLaw.GetComponent<Law>();
             scroller.direction = Vector3.up;
             scroller.scrollSpeed = scrollSpeed;  // Set scrolling speed as desired
+            scroller.whoosh = 0;
             
             //Debug.Log(currentIndex);
             while (scroller != null)
@@ -43,11 +44,13 @@ public class LawScroller : MonoBehaviour
                 if (lawStamped)
                 {
                     scroller.direction = Vector3.right;
-                    scroller.scrollSpeed = 333;
+                    scroller.scrollSpeed = 0;
+                    scroller.whoosh = 2;
                     game.AskToReset();
                     yield return new WaitForSeconds(2);
                     Destroy(scroller);
                     lawStamped = false;
+                    scroller.whoosh = 0;
                 }
                 if (scroller.transform.position.y > 200) 
                 {
