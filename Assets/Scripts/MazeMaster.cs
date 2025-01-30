@@ -12,11 +12,11 @@ public class MazeMaster : MonoBehaviour
     public static Stamps[] items; // Array of 4 distinct items (GameObjects)
     public static List<int> availableRooms;  // Track rooms that can spawn items
     public static List<Stamps> spawnedItems = new List<Stamps>();  // List of spawned items
-    public static int performance = 50; // worm's performance
-    public static int sanity = 100; // host's sanity
-    private const float respawnInterval = 45f; // Time interval for respawn
+    public static int performance; // worm's performance
+    public static int sanity; // host's sanity
+    public const float respawnInterval = 90f; // Time interval for respawn, feel free to change as needed & the scroll speed will change accordingly!!
     private const int sanityPenalty = 25; // determines the amount of sanity taken off per miss
-    public static float timer = 0f;
+    public static float timer;
     private bool shouldReset = false;
     public static int lawValue = 10;
 
@@ -26,6 +26,9 @@ public class MazeMaster : MonoBehaviour
     
     void Start()
     {
+        timer = 0f;
+        sanity = 100;
+        performance = 50;
         rooms = new List<Room>();
         for (int i = 1; i <= 17; i++)
         {
@@ -41,6 +44,13 @@ public class MazeMaster : MonoBehaviour
     }
 
     void Update() {
+        if (sanity <= 0) {
+            SceneManager.LoadScene("InsanityEndScene");
+        } else if (performance <= 0) {
+            SceneManager.LoadScene("DefeatEndScene");
+        } else if (performance >= 100) {
+            SceneManager.LoadScene("VictoryEndScene");
+        }
         UpdateUI();
     }
 
@@ -158,18 +168,18 @@ public class MazeMaster : MonoBehaviour
         sanityMeter.value = sanity;
         performanceMeter.value = performance;
         float timeLeft = respawnInterval - timer;
-        if (timeLeft <= 0f) {
+        int minutes = Mathf.FloorToInt(timeLeft / 60);
+        int seconds = Mathf.FloorToInt(timeLeft % 60);
+        String formattedCountdown = $"{minutes:D2}:{seconds:D2}"; // Formats as MM:SS
+        if (timeLeft <= 0f)
+        {
             // failed
             timerText.color = Color.red;
-            timerText.text = "00:00";
-        } else if (timeLeft <= 9f) // single digits
+        }
+        else
         {
             timerText.color = Color.white;
-            timerText.text = "00:0" + Mathf.Ceil(respawnInterval - timer).ToString();
-        }
-        else {
-            timerText.color = Color.white;
-            timerText.text = "00:" + Mathf.Ceil(respawnInterval - timer).ToString();
+            timerText.text = formattedCountdown;
         }
     }
 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      worm bills alpha-1_0: -778957837942873589
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

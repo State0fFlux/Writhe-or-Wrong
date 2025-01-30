@@ -6,11 +6,12 @@ public class LawScroller : MonoBehaviour
     public GameObject[] laws;  // Array of PNG GameObjects (Sprites)
     private int currentIndex = 0;
     public static bool lawStamped = false;
-    public float timePerImage = 45f;
+    private float timePerImage;
     public MazeMaster game;
 
     private void Start()
     {
+        timePerImage = MazeMaster.respawnInterval;
         StartCoroutine(ScrollLaws());
     }
 
@@ -26,10 +27,9 @@ public class LawScroller : MonoBehaviour
 
             // Calculate screen and image dimensions
             float screenHeight = Camera.main.orthographicSize * 2; // Full screen height in world units
-            float imageHeight = spriteRenderer.bounds.size.y;  // Consider scale
 
             // Dynamically calculate scroll speed
-            float scrollSpeed = (screenHeight - 30 + imageHeight) / timePerImage; // had to manually adjust, there's gotta be a better mathematical approach to this
+            float scrollSpeed = screenHeight * 2 / timePerImage; // assumes the page is roughly the camera's height
 
             // Start scrolling this image
             Law scroller = currentLaw.GetComponent<Law>();
