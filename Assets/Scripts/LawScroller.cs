@@ -19,10 +19,11 @@ public class LawScroller : MonoBehaviour
     {
         while (true)
         {
+            currentIndex = Random.Range(0, laws.Length);
             GameObject currentLaw = Instantiate(laws[currentIndex], new Vector3(120, -140 + 30, 0), Quaternion.identity); // Start offscreen
             SpriteRenderer spriteRenderer = currentLaw.GetComponent<SpriteRenderer>();
             spriteRenderer.sortingOrder = -50;
-            currentLaw.transform.localScale = new Vector3(7, 7, 0);
+            currentLaw.transform.localScale *= 7;
             currentLaw.transform.SetParent(transform); // Ensure the image is a child of the manager
 
             // Calculate screen and image dimensions

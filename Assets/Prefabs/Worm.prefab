@@ -3257,7 +3257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 517377997825687103}
-  moveSpeed: 50
+  moveSpeed: 100
   rotateSpeed: 360
 --- !u!1 &7511044537809731547
 GameObject:
@@ -4388,7 +4388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639802842298669539, guid: b721eee0289d24b909988c774119e36f, type: 3}
       propertyPath: moveSpeed
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5650786856022303521, guid: b721eee0289d24b909988c774119e36f, type: 3}
       propertyPath: m_LocalPosition.x
