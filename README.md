@@ -16,4 +16,7 @@
 - **Engine**: Unity 6
 - **Languages**: C#
 - **Art & Design**: Boxy SVG for assets, Procreate for background visuals, Garageband for digital tracks
+
+## Public Demo
+- This game is currently up on my [itch.io](https://state0fflux.itch.io/writhe-or-wrong) account!
 ---
