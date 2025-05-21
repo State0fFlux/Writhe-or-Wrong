@@ -15,5 +15,5 @@
 ## Technology Stack
 - **Engine**: Unity 6
 - **Languages**: C#
-- **Art & Design**: Boxy SVG for assets, Garageband for digital tracks
+- **Art & Design**: Boxy SVG for assets, Procreate for background visuals, Garageband for digital tracks
 ---
